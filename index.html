@@ -4,13 +4,13 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'/>
   <title>Document</title>
-  <script src='js/index.js'></script>
+  <script src='js/index.js' defer ></script>
   <link rel='stylesheet' href='index.css'/>
 </head>
 <body>
   <div id='main'>
 
-    <h2>GitHub Search</h2>
+    <h2 class="primary-title">GitHub Search</h2>
 
     <form id='github-form'>
       <input id='search' type='text' name='search'>
@@ -19,15 +19,35 @@
 
     <div id='github-container'>
       <ul id='user-list'>
+        <!-- <li class="card">
+
+          <img class = "user-avatar" src="./Little Europe Jewels & Time – International Wristwatch.png" alt="user's avatar image">
+          <div class="user-details">
+              <p class="user-name" id="userName">${user.login}</p>
+              <a id ='profileLink' class="card-link capitalize" href="${user.html_url}"> my github </a>
+              <p id ='repositories' class="repository card-link capitalize">my github repositories </p>
+          </div>
+
+        </li> -->
 
       </ul>
 
-      <ul id='repos-list'>
+      <ul id='reposList' class="repo-list flex-column">
+              
+                    <!-- Skeleton of repository element  
+                    <li><a href="#" class="repo-link" > Lorem ipsum dolor sit amet. </a> </li>
+                    -->
+              
 
+             
+        
+  
       </ul>
     </div>
 
   </div>
+
+  
 
 </body>
 </html>

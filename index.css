@@ -2,12 +2,229 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 #github-container {
   display: flex;
+  
 }
 
 ul {
   list-style: none;
 }
+
+
+:root{
+
+  /* COLORS*/
+/* Colors */
+--c-neutral-100: rgb(218, 230, 248);
+--c-neutral-800: rgb(5, 3, 0);
+--c-accent-500: rgb(128, 72, 0);
+--c-primary-200: rgb(113, 113, 248);
+--c-primary-500: rgb(3, 6, 51);;
+--bg-neutral-300: rgb(236, 220, 201);
+
+/* Background Colors */
+--bg-neutral-100: rgb(239, 245, 255);
+--bg-neutral-800: rgb(5, 3, 0);
+--bg-accent-500: rgb(128, 72, 0);
+--bg-primary-500: rgb(3, 6, 51);;
+
+
+
+
+
+/* CARD */
+--card-min-width:25em;
+--card-border-radius:7px;
+
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+-moz-text-size-adjust: none;
+-webkit-text-size-adjust: none;
+text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+list-style: none;
+}
+
+/* Set core body defaults */
+body {
+min-height: 100vh;
+line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+text-decoration-skip-ink: auto;
+color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+max-width: 100%;
+display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+scroll-margin-block: 5ex;
+}
+
+/* ---------- body --------- */
+
+body{
+background-color:var(--bg-neutral-100);
+color:var(--c-neutral-800);
+
+}
+
+
+/* UTILITY CLASSES */
+.primary-title{
+  margin-bottom:0.9rem ;
+}
+.capitalize{
+text-transform: capitalize;
+}
+
+/* CARD */
+.card{
+  width:min(var(--card-min-width),80%);
+  background-color:var(--bg-primary-500); 
+  padding: 2em 0.2em;
+  margin-block-end:2em;
+}
+
+.card,
+.user-avatar{
+  border-radius: var(--card-border-radius);
+}
+
+.user-avatar,
+.user-details{
+  width:85%;
+  margin-inline: auto;
+}
+
+.user-avatar{
+  object-fit: cover;
+  object-position:top center;  
+}
+
+.user-details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color:var(--c-neutral-100);
+}
+.user-name{
+  align-self: center;  
+  margin-block-end: 1rem;
+  font-weight: 500;
+  font-size:1.3rem;
+  border-bottom: 2px solid var(--c-primary-200);
+
+}
+.card-link{  
+  color:inherit;
+  font-size:.95rem;
+  text-decoration:none;
+  cursor: pointer;
+}
+
+.card-link:hover,
+.card-link:focus-within{
+  color:var(--c-primary-200);
+}
+
+/* REPOSITORY LIST */
+.repo-list{
+  margin-block-start: 1rem;  
+  height: min-content;
+  padding: 2em 2em 2.5em;
+  background:transparent;
+  color:var(--c-primary-500);  
+  border-radius:var(--card-border-radius);
+  
+}
+
+.repository{
+  margin-block-end: 2rem;
+  padding-block-end: 1em; 
+}
+
+.repo-link{
+  position:relative;
+  width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  color:inherit;
+  margin-block-end: 0.5rem;
+  
+  }
+  
+  .repo-link::after{
+  content: ' ';
+  position: absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height: 1.5px;
+  background-color: var(--c-primary-200);
+  transform:scaleX(0);
+  transform-origin:right;
+  transition: transform 210ms ease-in;
+  
+  }
+  
+  
+  .repo-link:hover::after{
+      transform:scaleX(1);
+      transform-origin:left;
+  
+  }
